@@ -34,23 +34,24 @@ public class Imc {
 
     }
     public void definirSituacaoDoPaciente(){
-        if (resultadoImc < 18.5){
+        if (resultadoImc < 18.6){
             situacaoCorporal = "abaixo do peso";
-        } else if (resultadoImc >=18.5 && resultadoImc <= 24.9) {
+        } else if (resultadoImc >= 18.6 && resultadoImc < 25.0) {
             situacaoCorporal = "peso ideal (parabéns)";
-        } else if (resultadoImc >= 25.0 && resultadoImc <= 29.9) {
+        } else if (resultadoImc >= 25.0 && resultadoImc < 30.0) {
             situacaoCorporal = "levemente acima do peso";
-        } else if (resultadoImc >= 30.0 && resultadoImc <= 34.9) {
+        } else if (resultadoImc >= 30.0 && resultadoImc < 35.0) {
             situacaoCorporal = "obesidade grau I";
-        } else if (resultadoImc >= 35.0 && resultadoImc <= 39.9) {
-            situacaoCorporal = "obesidade grau II";
+        } else if (resultadoImc >= 35.0 && resultadoImc < 40) {
+            situacaoCorporal = "obesidade grau II (severa)";
         }else{
-            situacaoCorporal = "obesidade grau III";
+            situacaoCorporal = "obesidade grau III (mórbida)";
         }
 
         exibirResultados();
     }
     public void exibirResultados(){
+        System.out.println();
         System.out.println("---RESULTADO---");
         String resultadoFormatado = String.format ("%.2f", resultadoImc);
         System.out.println("Nome do aluno: " + nomeDoAluno);
@@ -58,7 +59,4 @@ public class Imc {
         System.out.println("Status: " + situacaoCorporal);
         System.out.println("-----------------------------");
     }
-
-
-
 }
