@@ -4,22 +4,22 @@ import java.util.Scanner;
 
 public class Imc {
     String nomeDoAluno;
-    double pesoDoPaciente;
-    double alturaDoPaciente;
+    double pesoDoAluno;
+    double alturaDoAluno;
     double resultadoImc;
     String situacaoCorporal;
 
     public void inserirDados(){
         Scanner leitor = new Scanner(System.in);
 
-        System.out.print("Nome do paciente: ");
+        System.out.print("Nome do aluno: ");
         nomeDoAluno = leitor.nextLine();
 
-        System.out.print("Insira o peso do paciente(Kg): ");
-        pesoDoPaciente = leitor.nextDouble();
+        System.out.print("Insira o peso do aluno(Kg): ");
+        pesoDoAluno = leitor.nextDouble();
 
-        System.out.print("Insira a altura do paciente(m): ");
-        alturaDoPaciente = leitor.nextDouble();
+        System.out.print("Insira a altura do aluno(m): ");
+        alturaDoAluno = leitor.nextDouble();
 
         leitor.close();
         System.out.println("-----------------------------");
@@ -27,8 +27,8 @@ public class Imc {
         calcularImc();
     }
     public void calcularImc(){
-        double alturaAoQuadrado = alturaDoPaciente * alturaDoPaciente;
-        resultadoImc = pesoDoPaciente / alturaAoQuadrado;
+        double alturaAoQuadrado = alturaDoAluno * alturaDoAluno;
+        resultadoImc = pesoDoAluno / alturaAoQuadrado;
 
         definirSituacaoDoPaciente();
 
